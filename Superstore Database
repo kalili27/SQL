@@ -26,31 +26,33 @@ VALUES
     (13, 'Slow Cooker', 'Appliances', 49.95, 30, 4.7),
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
-    
-    For this project, I used SQL to query the Superstore database to get information about items sold at the store and their prices.
+
+# Analysis:
+
+For this project, I used SQL to query the Superstore database to get information about items sold at the store and their prices.
 
 --write a SQL query that orders the items by price
-select *
-from superstore
-order by price desc
-limit 5;
+SELECT *
+FROM superstore
+ORDER BY price DESC
+LIMIT 5;
 
 --write a SQL query for a statistic about item prices
-select item_name, price
-from superstore
-order by price asc;
+SELECT item_name, price
+FROM superstore
+ORDER BY price ASC;
 
 --SQL about price for items in the category 'Kitchen Supplies'
-select avg(price), category
-from superstore
-where category='Kitchen Supplies';
+SELECT AVG(price), category
+FROM superstore
+WHERE category='Kitchen Supplies';
 
 --how many air purifiers are in stock?
-select sum(stock_quantity), item_name
-from superstore
-where item_name='Air Purifier';
+SELECT SUM(stock_quantity), item_name
+FROM superstore
+WHERE item_name='Air Purifier';
 
 --what is the average rating of a Smart LED TV?
-select average_rating, item_name
-from superstore
-where item_name='Smart LED TV';
+SELECT average_rating, item_name
+FROM superstore
+WHERE item_name='Smart LED TV';
